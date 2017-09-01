@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>3D相册</title>
+	<link rel="stylesheet" type="text/css" href="3d相册.css">
+</head>
+<body>
+	<div id="perspective">
+		<div id="wrap">
+			<img src="img/2.jpg">
+			<img src="img/3.jpg">
+			<img src="img/4.jpg">
+			<img src="img/5.jpg">
+			<img src="img/6.jpg">
+			<img src="img/7.jpg">
+			<img src="img/8.jpg">
+			<img src="img/9.jpg">
+			<img src="img/10.jpg">
+			<img src="img/11.jpg">
+			<img src="img/12.jpg">
+			<img src="img/13.jpg">
+			<img src="img/15.jpg">
+			<img src="img/16.jpg">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	window.onload=function(){
+		var AImg=document.getElementsByTagName("img");
+        var deg=360/14;
+        var lastX,lastY,nowX,nowY,minsX,minsY,roX=-20,roY=0;
+		//原型引用数组的forEach方法，遍历图片
+		Array.prototype.forEach.call(AImg,function(el,index){
+			el.style.transform="rotateY("+index*deg+"deg) translateZ(400px)";
+		});
+
+		el.style.transition="1s"+(11-index)*0.1+"s";
+
+		document.onmousedown=function(e){
+			var e=e||window.event;
+			lastX=e.clientX;
+			lastY=e.clientY;
+			this.onmousemove=function(e){
+				var e=e||window.event;
+				nowX=e.clientX;
+				nowY=e.clientY;
+				minsX=nowX-lastX;
+				minsY=nowY-lastY;
+				roX-=minsY*0.2;
+				roY+=minsX*0.2;
+
+				wrap.style.transform="rotateX("+roX+"deg) rotateY("+roY+"deg)";
+				
+				lastX=nowX;
+				lastY=nowY;
+			}
+			this.onmouseup=function(e){
+				this.onmousemove=null;
+				this.onmouseup=null;
+			}
+		}
+	}
+		
+
+
+
+	</script>
+</body>
+</html>

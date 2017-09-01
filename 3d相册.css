@@ -1,0 +1,31 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+
+body{
+	background-color: #000;
+	overflow: hidden;
+}
+	
+	
+#perspective{
+	position: relative;
+	perspective: 800px;
+}
+
+#wrap{
+    width: 150px;
+	height: 167px;
+	margin: 120px auto;
+	transform-style: preserve-3d;
+	transform: rotateX(-20deg) rotateY(0deg);
+}
+
+
+#wrap img{
+	width: 150px;
+	position: absolute;
+	transform: rotateY(0deg);
+	transition: 1s;
+}
