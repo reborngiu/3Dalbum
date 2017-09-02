@@ -7,8 +7,7 @@ body{
 	background-color: #000;
 	overflow: hidden;
 }
-	
-	
+				
 #perspective{
 	position: relative;
 	perspective: 800px;
@@ -17,15 +16,24 @@ body{
 #wrap{
     width: 150px;
 	height: 167px;
-	margin: 120px auto;
+	margin: 100px auto;
 	transform-style: preserve-3d;
 	transform: rotateX(-20deg) rotateY(0deg);
 }
-
 
 #wrap img{
 	width: 150px;
 	position: absolute;
 	transform: rotateY(0deg);
-	transition: 1s;
+	transition: 2s;
+
+	/*设置圆角边框*/
+	border:solid 1px #fdd;
+	border-radius: 10%;
+
+	padding: 5px;
+
+	/*设置倒影*/
+	-webkit-box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,0.3) 40%,rgba(250,250,250,0.4));
+	box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,0.3) 40%,rgba(250,250,250,0.4));
 }
